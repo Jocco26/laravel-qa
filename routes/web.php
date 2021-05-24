@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//Route::get('/articles', 'App\Http\Controllers\ArticleController@index');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('/questions', 'App\Http\Controllers\QuestionController');
